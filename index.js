@@ -20,7 +20,7 @@ const commentRoutes = require("./routes/comments");
 const videoRoutes = require("./routes/videos");
 const cookieParser = require("cookie-parser");
 
-const BASE_URL = process.env.BASE_URL;
+
 
 dotenv.config();
 connectDB();
@@ -70,7 +70,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: `${BASE_URL}`,
+    origin: "https://jce-virtual.netlify.app/",
   },
 });
 
