@@ -40,18 +40,18 @@ app.use("/api/blogposts", blogPostRoute);
 app.use("/api/blogpcat", blogCatRoute);
 
 // Deployment code for chat
-const __dirname1 = path.resolve();
-const pd = path.dirname(__dirname1);
+// const __dirname1 = path.resolve();
+// const pd = path.dirname(__dirname1);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(pd, "/frontend/build")));
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(pd, "/frontend/build")));
 
-  app.get("*", (req, res) => res.sendFile("https://workspace-jssstu-frontend.onrender.com"));
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running..");
-  });
-}
+//   app.get("*", (req, res) => res.sendFile("https://workspace-jssstu-frontend.onrender.com"));
+// } else {
+//   app.get("/", (req, res) => {
+//     res.send("API is running..");
+//   });
+// }
 
 // Deployment end
 
