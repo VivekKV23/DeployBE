@@ -20,7 +20,6 @@ const commentRoutes = require("./routes/comments");
 const videoRoutes = require("./routes/videos");
 const cookieParser = require("cookie-parser");
 
-
 dotenv.config();
 connectDB();
 const app = express();
@@ -47,9 +46,7 @@ const pd = path.dirname(__dirname1);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(pd, "/frontend/build")));
 
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(pd, "frontend", "build", "index.html"))
-  );
+  app.get("*", (req, res) => res.sendFile("https://jce-virtual.netlify.app"));
 } else {
   app.get("/", (req, res) => {
     res.send("API is running..");
@@ -71,7 +68,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://jce-virtual.netlify.app",
   },
 });
 
