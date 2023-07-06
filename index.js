@@ -46,7 +46,7 @@ const pd = path.dirname(__dirname1);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(pd, "/frontend/build")));
 
-  app.get("*", (req, res) => res.sendFile("https://Workspace-JSSSTU-frontend.onrender.com"));
+  app.get("*", (req, res) => res.sendFile("https://workspace-jssstu-frontend.onrender.com"));
 } else {
   app.get("/", (req, res) => {
     res.send("API is running..");
@@ -68,7 +68,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://Workspace-JSSSTU-frontend.onrender.com",
+    origin: "https://workspace-jssstu-frontend.onrender.com",
   },
 });
 
