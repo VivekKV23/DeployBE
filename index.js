@@ -68,7 +68,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://workspace-jssstu-frontend.onrender.com",
+    origin: "http://localhost:3000",
   },
 });
 
